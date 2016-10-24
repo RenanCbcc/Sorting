@@ -32,7 +32,7 @@ public class Bubble_sort {
 	
 	//----------------------------------------------------------
 	
-	public void Bubblesort()
+	public void BubbleSort()
 	{
 		int in, out;
 		for ( out = elements - 1; out > 1; out -- )
@@ -48,6 +48,8 @@ public class Bubble_sort {
 				
 		}
 	}
+	
+	//----------------------------------------------------------
 	
 	public void swap(int in, int out)
 	{

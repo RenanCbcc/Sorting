@@ -4,34 +4,56 @@ import simple_sorting.Insertion_sort;
 import simple_sorting.Selection_sort;
 
 public class Main {
-	private int MAX = 100;
-	private Bubble_sort array; //objeto do tipo Bubble
-	private Selection_sort Selection_array;
-	private Insertion_sort Insertion_array;
 	
-	public void main(String[] args) {
+	static int MAX = 100;
+	static Bubble_sort Bubble_array; //objeto do tipo Bubble
+	static Selection_sort Selection_array;
+	static Insertion_sort Insertion_array;
+	
+	public static void main(String[] args) {
+	
+		
+		
 		// TODO Auto-generated method stub
 	
 	//----------------------------------------------------------
-			
-	array = new Bubble_sort(MAX);
-	array.inserte(0);
-	array.inserte(2);
-	array.inserte(4);
-	array.inserte(7);
-	array.inserte(10);
-	array.inserte(13);
-	array.inserte(5);
-	array.inserte(22);
-	array.inserte(16);
-	array.inserte(15);
-	System.out.println("Antes");
-	array.display();//antes
-	array.Bubblesort();//ordena
-	System.out.println("Depois");
-	array.display();//depois
-	
+		/*	
+		Bubble_array = new Bubble_sort(MAX);
+		Bubble_array.inserte(0);
+		Bubble_array.inserte(2);
+		Bubble_array.inserte(4);
+		Bubble_array.inserte(7);
+		Bubble_array.inserte(10);
+		Bubble_array.inserte(13);
+		Bubble_array.inserte(5);
+		Bubble_array.inserte(22);
+		Bubble_array.inserte(16);
+		Bubble_array.inserte(15);
+		System.out.println("Antes");
+		Bubble_array.display();//antes
+		Bubble_array.BubbleSort();//ordena
+		System.out.println("Depois");
+		Bubble_array.display();//depois
+		*/
 	//----------------------------------------------------------
+	
+		Selection_array = new Selection_sort(MAX);
+		Selection_array.inserte(10);
+		Selection_array.inserte(20);
+		Selection_array.inserte(30);
+		Selection_array.inserte(50);
+		Selection_array.inserte(40);
+		Selection_array.inserte(70);
+		Selection_array.inserte(80);
+		Selection_array.inserte(60);
+		Selection_array.inserte(100);
+		Selection_array.inserte(90);
+		System.out.println("Antes");
+		Selection_array.display();//antes
+		Selection_array.SelectionSort();//ordena
+		System.out.println("Depois");
+		Selection_array.display();//depois
+	
 	
 	}
 
