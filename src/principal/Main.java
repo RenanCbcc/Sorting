@@ -36,7 +36,7 @@ public class Main {
 		Bubble_array.display();//depois
 		*/
 	//----------------------------------------------------------
-	
+		/*
 		Selection_array = new Selection_sort(MAX);
 		Selection_array.inserte(10);
 		Selection_array.inserte(20);
@@ -53,8 +53,24 @@ public class Main {
 		Selection_array.SelectionSort();//ordena
 		System.out.println("Depois");
 		Selection_array.display();//depois
-	
-	
+		*/
+	//----------------------------------------------------------
+		Insertion_array = new Insertion_sort(MAX);
+		Insertion_array.inserte(50);
+		Insertion_array.inserte(40);
+		Insertion_array.inserte(30);
+		Insertion_array.inserte(90);
+		Insertion_array.inserte(10);
+		Insertion_array.inserte(60);
+		Insertion_array.inserte(100);
+		Insertion_array.inserte(80);
+		Insertion_array.inserte(70);
+		Insertion_array.inserte(20);
+		System.out.println("Antes");
+		Insertion_array.display();
+		Insertion_array.InsertionSort();
+		System.out.println("Depois");
+		Insertion_array.display();
 	}
 
 }

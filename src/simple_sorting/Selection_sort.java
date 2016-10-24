@@ -38,7 +38,7 @@ public class Selection_sort {
 		for (out = 0; out < elements - 1; out ++)
 		{
 			min = out; // mernor elemento do array 
-			for ( in = out +1; in < elements ; in-- )
+			for ( in = out +1; in < elements ; in++ )
 			{
 				if (array[in] < array[min])
 					min = in; //agora minimo está na posição 'in'
@@ -57,5 +57,8 @@ public class Selection_sort {
 		 array[out] = temp;
 		 
 	}
+	
+	//----------------------------------------------------------
+
 
 }
