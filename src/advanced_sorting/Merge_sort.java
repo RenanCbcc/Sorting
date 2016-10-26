@@ -39,6 +39,7 @@ public class Merge_sort {
 			MergeSort(workspace,0,elements-1);
 		}
 		
+		//----------------------------------------------------------
 		
 		public void MergeSort(int[] workspace,int lowerBound, int upperBound)
 		{
@@ -50,11 +51,17 @@ public class Merge_sort {
 			else
 			{
 				int mid = (lowerBound + upperBound)/2; //encontra um ponto intermediário.
+				
 				MergeSort(workspace,lowerBound,mid);//metade inferior
+				
 				MergeSort(workspace,mid +1,upperBound);//metade superior
+				
+				merge(workspace,lowerBound,mid+1,upperBound);
 				
 			}
 		}
+		
+		//----------------------------------------------------------
 		
 		public void merge(int[] workspace, int lowPointer,int highPointer,int upperBound)
 		{
@@ -67,11 +74,11 @@ public class Merge_sort {
 			{
 				if ( this.array[lowPointer] < this.array[highPointer] )
 				{
-					workspace[j++] = this.array[highPointer];
+					workspace[j++] = this.array[lowPointer++];
 				}
 				else
 				{
-					workspace[j++] = this.array[lowPointer];
+					workspace[j++] = this.array[highPointer++];
 				}
 			}
 			
@@ -91,4 +98,7 @@ public class Merge_sort {
 			}
 
 		}
+		
+		//----------------------------------------------------------
+		
 }
