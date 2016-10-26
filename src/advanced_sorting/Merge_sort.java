@@ -39,7 +39,8 @@ public class Merge_sort {
 			MergeSort(workspace,0,elements-1);
 		}
 		
-		public void MergeSort(int[] array,int lowerBound, int upperBound)
+		
+		public void MergeSort(int[] workspace,int lowerBound, int upperBound)
 		{
 			if (lowerBound == upperBound )
 			{
@@ -49,23 +50,45 @@ public class Merge_sort {
 			else
 			{
 				int mid = (lowerBound + upperBound)/2; //encontra um ponto intermediário.
-				MergeSort(array,lowerBound,mid);//metade inferior
-				MergeSort(array,mid +1,upperBound);//metade superior
+				MergeSort(workspace,lowerBound,mid);//metade inferior
+				MergeSort(workspace,mid +1,upperBound);//metade superior
 				
 			}
 		}
 		
-		public void merge(int array, int lowPointer,int highPointer,int upperBound)
+		public void merge(int[] workspace, int lowPointer,int highPointer,int upperBound)
 		{
 			int j = 0;
 			int lowerBound = lowPointer;
 			int mid = highPointer -1;
 			int n = upperBound - lowerBound + 1; // # of itens
 			
-			while(lowPointer <= mid && highPointer <= upperBound)
+			while (lowPointer <= mid && highPointer <= upperBound)
 			{
-				if ( a)
-				array[j++]
+				if ( this.array[lowPointer] < this.array[highPointer] )
+				{
+					workspace[j++] = this.array[highPointer];
+				}
+				else
+				{
+					workspace[j++] = this.array[lowPointer];
+				}
 			}
+			
+			while ( lowPointer <= mid )
+			{
+				workspace[j++] = this.array[lowPointer++];
+			}
+			
+			while ( highPointer <= upperBound )
+			{
+				workspace[j++] = this.array[highPointer++];
+			}
+			
+			for ( j = 0; j < n; j++ )
+			{
+				this.array[lowerBound+j] = workspace[j];
+			}
+
 		}
 }

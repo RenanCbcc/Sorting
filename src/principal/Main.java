@@ -2,14 +2,15 @@ package principal;
 import simple_sorting.Bubble_sort;
 import simple_sorting.Insertion_sort;
 import simple_sorting.Selection_sort;
+import advanced_sorting.Merge_sort;
 
 public class Main {
 	
 	static int MAX = 100;
-	static Bubble_sort Bubble_array; //objeto do tipo Bubble
-	static Selection_sort Selection_array;
-	static Insertion_sort Insertion_array;
-	
+	static Bubble_sort 		Bubble_array; //objeto do tipo Bubble
+	static Selection_sort	Selection_array;
+	static Insertion_sort	Insertion_array;
+	static Merge_sort		Merge_array;
 	public static void main(String[] args) {
 	
 		
@@ -55,6 +56,7 @@ public class Main {
 		Selection_array.display();//depois
 		*/
 	//----------------------------------------------------------
+		/*
 		Insertion_array = new Insertion_sort(MAX);
 		Insertion_array.inserte(50);
 		Insertion_array.inserte(40);
@@ -71,6 +73,27 @@ public class Main {
 		Insertion_array.InsertionSort();
 		System.out.println("Depois");
 		Insertion_array.display();
+		*/
+		
+		//----------------------------------------------------------
+		
+		Merge_array = new Merge_sort(MAX);
+		Merge_array.inserte(50);
+		Merge_array.inserte(40);
+		Merge_array.inserte(30);
+		Merge_array.inserte(90);
+		Merge_array.inserte(10);
+		Merge_array.inserte(60);
+		Merge_array.inserte(100);
+		Merge_array.inserte(80);
+		Merge_array.inserte(70);
+		Merge_array.inserte(20);
+		System.out.println("Antes");
+		Merge_array.display();
+		Merge_array.MergeSort();
+		System.out.println("Depois");
+		Merge_array.display();
+		
 	}
 
 }
