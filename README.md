@@ -1,6 +1,6 @@
 # Sorting
-### Algoritmos de ordenação implementados em Java
-* BubbleSort()
-* InsertionSort()
-* SelectionSort()
-* MergeSort()
+### Algoritmos de ordenação implementados em  :coffee:Java
+* `BubbleSort()`
+* `InsertionSort()`
+* `SelectionSort()`
+* `MergeSort()`
