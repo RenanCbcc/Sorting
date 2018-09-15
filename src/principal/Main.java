@@ -53,21 +53,13 @@ public class Main {
         //----------------------------------------------------------
         {
             Insertion = new InsertionSort(MAX);
-            /*
             for (int i = 0; i < MAX; i++) {
                 int randomNum = random.nextInt((MAX - MIN) + 1) + MIN;
-                Insertion_array.insert(randomNum);
+                Insertion.insert(randomNum);
             }
-            */
-            Insertion.insert(10);
-            Insertion.insert(7);
-            Insertion.insert(4);
-            Insertion.insert(2);
-            Insertion.insert(9);
 
             long startTime = System.currentTimeMillis();
             Insertion.sort();
-            Insertion.display();
             long stopTime = System.currentTimeMillis();
             long elapsedTime = stopTime - startTime;
             System.out.println("Time taken for Insertion Sort: " + elapsedTime);
@@ -84,7 +76,7 @@ public class Main {
             Merge.sort();
             long stopTime = System.currentTimeMillis();
             long elapsedTime = stopTime - startTime;
-            System.out.println("Time taken for Insertion Sort: " + elapsedTime);
+            System.out.println("Time taken for Merge Sort: " + elapsedTime);
 
         }
 

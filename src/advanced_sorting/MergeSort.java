@@ -36,51 +36,77 @@ public class MergeSort {
 
     //----------------------------------------------------------
 
-    private void sort(int[] workspace, int lowerBound, int upperBound) {
-        if (lowerBound == upperBound) {
+    private void sort(int[] workspace, int begin, int end) {
+        if (begin == end) {
+            /**
+             In that case,my array's size is exactly one and there is no need of sorting.
+             This is also known as base case of the recursion.
+             */
+
             return;
+
         } else {
-            int mid = (lowerBound + upperBound) / 2;
+            int middle = (begin + end) / 2;
 
-            sort(workspace, lowerBound, mid);
+            sort(workspace, begin, middle);
 
-            sort(workspace, mid + 1, upperBound);
+            sort(workspace, middle + 1, end);
 
-            merge(workspace, lowerBound, mid + 1, upperBound);
+            merge(workspace, begin, middle+1, end);
 
         }
     }
 
     //----------------------------------------------------------
+    private void merge(int[] workspace, int begin, int middle, int end) {
+        int current = 0;
+        int initial = begin;
+        int mid = middle - 1;
 
-    private void merge(int[] workspace, int lowPointer, int highPointer, int upperBound) {
-        int j = 0;
-        int lowerBound = lowPointer;
-        int mid = highPointer - 1;
-        int n = upperBound - lowerBound + 1; // # of itens
-
-        while (lowPointer <= mid && highPointer <= upperBound) {
-            if (this.array[lowPointer] < this.array[highPointer]) {
-                workspace[j++] = this.array[lowPointer++];
+        while (begin <= mid && middle <= end) {
+            if (this.array[begin] < this.array[middle]) {
+                workspace[current++] = this.array[begin++];
             } else {
-                workspace[j++] = this.array[highPointer++];
+                workspace[current++] = this.array[middle++];
             }
         }
 
-        while (lowPointer <= mid) {
-            workspace[j++] = this.array[lowPointer++];
+        while (begin <= mid) {
+            workspace[current++] = this.array[begin++];
         }
 
-        while (highPointer <= upperBound) {
-            workspace[j++] = this.array[highPointer++];
+        while (middle <= end) {
+            workspace[current++] = this.array[middle++];
         }
 
-        for (j = 0; j < n; j++) {
-            this.array[lowerBound + j] = workspace[j];
+        for (int counter = 0; counter < current; counter++) {
+            this.array[initial + counter] = workspace[counter];
         }
 
     }
 
     //----------------------------------------------------------
+    /*
+     * Example of mergesorte-like algorithm*/
+    private void mergesort(int[] arrayA, int sizeA,
+                           int[] arrayB, int sizeB,
+                           int[] arrayC) {
+        int aDex = 0, bDex = 0, cDex = 0;
 
+        while (aDex < sizeA && bDex < sizeB) {
+            if (arrayA[aDex] < arrayB[bDex]) {
+                arrayC[cDex++] = arrayA[aDex++];
+            } else {
+                arrayC[cDex++] = arrayA[bDex++];
+            }
+        }
+
+        while (aDex < sizeA) {//Array A is not empty.
+            arrayC[cDex++] = arrayA[aDex++];
+        }
+
+        while (bDex < sizeB) {//Array B is not empty.
+            arrayC[cDex++] = arrayB[bDex++];
+        }
+    }
 }
