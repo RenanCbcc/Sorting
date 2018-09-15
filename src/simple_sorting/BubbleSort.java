@@ -13,7 +13,7 @@ public class BubbleSort {
 
     //----------------------------------------------------------
 
-    public void inserte(int value) {
+    public void insert(int value) {
         array[elements] = value;
         elements++;
     }

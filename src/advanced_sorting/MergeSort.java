@@ -14,7 +14,7 @@ public class MergeSort {
 
     //----------------------------------------------------------
 
-    public void inserte(int value) {
+    public void insert(int value) {
         array[elements] = value;
         elements++;
     }
@@ -52,7 +52,7 @@ public class MergeSort {
 
             sort(workspace, middle + 1, end);
 
-            merge(workspace, begin, middle+1, end);
+            merge(workspace, begin, middle + 1, end);
 
         }
     }

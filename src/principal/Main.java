@@ -1,5 +1,6 @@
 package principal;
 
+import advanced_sorting.QuickSort;
 import simple_sorting.BubbleSort;
 import simple_sorting.InsertionSort;
 import simple_sorting.SelectionSort;
@@ -16,6 +17,7 @@ public class Main {
     static SelectionSort Selection;
     static InsertionSort Insertion;
     static MergeSort Merge;
+    static QuickSort Quick;
 
 
     public static void main(String[] args) {
@@ -28,7 +30,7 @@ public class Main {
             Bubble = new BubbleSort(MAX);
             for (int i = 0; i < MAX; i++) {
                 int randomNum = random.nextInt((MAX - MIN) + 1) + MIN;
-                Bubble.inserte(randomNum);
+                Bubble.insert(randomNum);
             }
             long startTime = System.currentTimeMillis();
             Bubble.sort();
@@ -70,7 +72,7 @@ public class Main {
             Merge = new MergeSort(MAX);
             for (int i = 0; i < MAX; i++) {
                 int randomNum = random.nextInt((MAX - MIN) + 1) + MIN;
-                Merge.inserte(randomNum);
+                Merge.insert(randomNum);
             }
             long startTime = System.currentTimeMillis();
             Merge.sort();
@@ -79,6 +81,21 @@ public class Main {
             System.out.println("Time taken for Merge Sort: " + elapsedTime);
 
         }
+
+        //----------------------------------------------------------
+        {
+            Quick = new QuickSort(MAX);
+            for (int i = 0; i < MAX; i++) {
+                int randomNum = random.nextInt((MAX - MIN) + 1) + MIN;
+                Quick.insert(randomNum);
+            }
+            long startTime = System.currentTimeMillis();
+            Quick.sort();
+            long stopTime = System.currentTimeMillis();
+            long elapsedTime = stopTime - startTime;
+            System.out.println("Time taken for Quick Sort: " + elapsedTime);
+        }
+
 
     }
 }
