@@ -1,4 +1,4 @@
 package advanced_sorting;
 
-public class RadixSort {
+public class HeapSort {
 }

@@ -35,38 +35,55 @@ public class QuickSort {
     }
 
     //--------------------------------------------------------------
-    public void quickSort(int left, int right) {
-        if (right - left <= 0)
-            return;
-        else {
-            long pivot = array[right];
-            int partition = partition(left, right, pivot);
-            quickSort(left, partition - 1);
-            quickSort(partition + 1, right);
+    private void quickSort(int begin, int end) {
+        if (end - begin > 1) {//Un array of length one is already orderd.
+            int pivot = array[end];
+            int partition = partition(begin, end, pivot);
+            quickSort(begin, partition - 1);
+            quickSort(partition + 1, end);
         }
     }
 
     //--------------------------------------------------------------
-    public int partition(int left, int right, long pivot) {
-        int leftPtr = left - 1;
-        int rightPtr = right;
-        while (true) {
-            while (array[++leftPtr] < pivot)
-                while (rightPtr > 0 && array[--rightPtr] > pivot)
-                    ; // (nop)
-            if (leftPtr >= rightPtr)
-                // if pointers cross,
-                break;
-            else
-                // not crossed, so
-                swap(leftPtr, rightPtr); //
 
-        } // end while(true)
-        swap(leftPtr, right);
-        // restore pivot
-        return leftPtr;
-        // return pivot location
-    } // end partitionIt()
+    private int partition(int begin, int end, int pivot) {
+        int left = begin - 1;
+        int right = end;
+        while (true) {
+            while (left < end && array[++left] < pivot) {
+                //Notice that is  necessary increment the variable before test it(++variable),
+                //otherwise the lopping would be always false.
+                //Does nothing, just
+            }
+            while (right > 0 && array[--right] > pivot) {
+                //Does nothing, just go on.
+            }
+            if (left >= right) {
+                break;//If the pointer crosses, partition is done.
+            } else {
+                swap(left, right);
+            }
+
+        }
+        swap(left, end);//restore pivot.
+        return left;
+
+        /*
+         * A less elegant solution to fid the partition can be:
+         * int pivot = array[end-1];
+         * int smallerFounded = 0;
+         *for (int i =0; i< end-1; i++){
+         *  if(array[i] <= pivot)
+         *  {
+         *  swap(pivot,smallerFounded);
+         *  smallerFounded++;
+         *      }
+         * }
+         * At the end of the lopping, the variable at position smallerFounded and pivot
+         * must be exchanged.
+         * */
+
+    }
 
     //--------------------------------------------------------------
     private void swap(int in, int out) {
